@@ -4,8 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>To-Do App</h1>
+  <div class="app-container">
+    <header>
+      <h1>To-Do App</h1>
+    </header>
+
+    <form id="todo-form" class="todo-form">
+      <input
+        type="text"
+        id="todo-input"
+        class="todo-input"
+        placeholder="Add a new task..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="btn btn-add">Add Task</button>
+    </form>
+
+    <div id="error-message" class="error-messageHidden"></div>
+
+    <main class="todo-list-container">
+      <ul id="todo-list" class="todo-list"></ul>
+      <div id="empty-state" class="empty-state">No tasks yet. Add one above!</div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
