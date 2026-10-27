@@ -65,8 +65,16 @@ app.delete('/api/todos/:id', (req, res) => {
   res.json(deletedTodo);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Reset function for testing helper
+app.resetState = () => {
+  todos = [];
+  nextId = 1;
+};
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
 
 module.exports = app;
